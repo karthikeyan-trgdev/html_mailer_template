@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TopRock Interiors - HTML Mailer</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+    <style>
+
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      body{
+        background-image: url(marble-texture.jpg);
+      }
+      /* General reset */
+      body,
+      table,
+      td {
+       font-family: "Poppins", sans-serif;
+      }
+      img {
+        border: 0;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* Container */
+      .email-wrap {
+        width: 100%;
+        background: #f4f6f8;
+        padding: 24px 0;
+      }
+      .email-inner {
+        max-width: 680px;
+        margin: 0 auto;
+      }
+
+      /* Card */
+.card {
+  background-image: url("marble-texture.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(18, 24, 40, 0.06);
+  position: relative;
+  z-index: 0;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0.5;
+  z-index: 1; /* sits above background image */
+}
+
+.card > * {
+  position: relative;
+  z-index: 2; /* ensures card content stays above overlay */
+}
+      /* Hero */
+      .hero {
+        background-image: url(team.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+      .hero .overlay {
+        background: #0d2d54d3;
+        padding: 36px 28px;
+      }
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #d0d6da;
+      }
+      .h1 {
+        font-size: 26px;
+        line-height: 1.12;
+        color: #ffffff;
+        margin: 10px 0 6px;
+        font-weight: 700;
+      }
+      .sub {
+        color: #e6eef6;
+        font-size: 14px;
+      }
+
+      /* Stats strip */
+      .stats {
+        display: flex;
+        gap: 12px;
+        padding: 18px;
+        justify-content: space-between;
+      }
+      .stat {
+        flex: 1;
+        text-align: center;
+      }
+      .stat .num {
+        font-weight: 700;
+        font-size: 25px;
+        color: #102a43;
+      }
+      .stat .lbl {
+        font-size: 14px;
+        color: #6b7885;
+      }
+
+      /* Services */
+      .services {
+        padding: 20px 0px;
+      }
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .service {
+        border-radius: 8px;
+        padding: 12px;
+        background: linear-gradient(180deg, #ffffff, #fbfcfd);
+        border: 1px solid #eef2f6;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      }
+      .service h4 {
+        margin: 4px 0 6px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .service p {
+        font-size: 13px;
+        color: #586874;
+        margin: 0;
+      }
+
+      /* CTA */
+      .cta {
+        padding: 22px;
+        text-align: center;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 18px;
+        border-radius: 8px;
+        background: #14427B;
+        color: #fff;
+        font-weight: 600;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      }
+
+      /* Footer */
+      .footer {
+        font-size: 12px;
+        color: #9aa6b2;
+        padding: 16px 20px;
+        text-align: center;
+      }
+      .service-grid h4{
+        text-align: center;
+      }
+            .service-grid p{
+        text-align: center;
+      }
+
+      /* Responsive */
+      @media screen and (max-width: 520px) {
+        .h1 {
+          font-size: 20px;
+        }
+        .service-grid {
+          grid-template-columns: 1fr;
+        }
+        .stats {
+          flex-direction: column;
+          gap: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body style="margin: 0; padding: 0;">
+    <center class="email-wrap">
+      <table
+        role="presentation"
+        class="email-inner"
+        width="100%"
+        cellpadding="0"
+        cellspacing="0"
+      >
+        <tr>
+          <td>
+            <table
+              role="presentation"
+              width="100%"
+              cellpadding="0"
+              cellspacing="0"
+              class="card"
+            >
+              <tr>
+                <td class="hero" style="background-color: #102a43">
+                  <div class="overlay">
+                    <table
+                      role="presentation"
+                      width="100%"
+                      cellpadding="0"
+                      cellspacing="0"
+                    >
+                      <tr style="display: flex;align-items: center;">
+                        <!-- Left Column (Text) -->
+                        <td
+                          style="
+                            width: 60%;
+                            vertical-align: top;
+                            padding-right: 10px;
+                          "
+                        >
+                          <div class="eyebrow">Warm greetings</div>
+                          <div class="h1">
+                            Dear [Recipient’s Name],
+                          </div>
+                          <h4 style="color: #fff;margin: 10px 0px;font-weight: 400;font-size: 14px;">Warm greetings from TopRock Interiors. I hope this message finds you well.</h4>
+                          <div class="sub">
+                            
+                          </div>
+                        </td>
+
+                        <!-- Right Column (Logo) -->
+                        <td
+                          style="
+                            width: 35%;
+                            text-align: right;
+                            vertical-align: top;
+                            display: flex;
+                            justify-content: end;
+                          "
+                        >
+                          <img
+                            src="tri_white.png"
+                            alt="TopRock Interiors Logo"
+                            style="width: 140px; max-width: 100%"
+                          />
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding: 16px 20px">
+                  <p style="margin: 0 0 12px; color: #24343f; font-size: 14px;text-align: center;">Allow me to introduce TopRock Interiors, a multi-disciplinary Design & Build firm with over 21 years of expertise in the industry. With a dedicated team of 600+ professionals, we have successfully delivered more than 3,000 projects across the GCC region. </p>
+
+                  <!-- Stats strip -->
+                  <div class="stats" role="presentation">
+                    <div class="stat">
+                      <div class="num">21+</div>
+                      <div class="lbl">Years Experience</div>
+                    </div>
+                    <div class="stat">
+                      <div class="num">600+</div>
+                      <div class="lbl">Professionals</div>
+                    </div>
+                    <div class="stat">
+                      <div class="num">3,000+</div>
+                      <div class="lbl">Projects Delivered</div>
+                    </div>
+                  </div>
+
+                  <!-- Services -->
+                  <div class="services">
+                    <div
+                      style="
+                        font-weight: 600;
+                        font-size: 18px;
+                        margin-bottom: 20px;
+                        color: #102a43;
+                        text-align: center;
+                      "
+                    >
+                      Our Integrated In-House Capabilities
+                    </div>
+                    <div class="service-grid">
+                      <div class="service">
+                        <div class="image" style="height: 150px;width: 100%;margin-bottom: 10px;">
+                          <img src="service-1.jpg" alt="" style="height: 100%;width: 100%;object-fit: cover;border-radius: 10px;">
+                        </div>
+                        <h4>Joinery &amp; Upholstery</h4>
+                        <p>
+                          Expert craftsmanship in custom joinery and upholstery
+                          tailored for design and durability.
+                        </p>
+                      </div>
+
+                      <div class="service">
+                        <div class="image" style="height: 150px;width: 100%;margin-bottom: 10px;">
+                          <img src="service-2.jpg" style="height: 100%;width: 100%;object-fit: cover;border-radius: 10px;">
+                        </div>
+                        <h4>Glass Works (TopRock Inhouse)</h4>
+                        <p>
+                          Bespoke glass features and installations that balance
+                          aesthetics with function.
+                        </p>
+                      </div>
+
+                      <div class="service">
+                        <div class="image" style="height: 150px;width: 100%;margin-bottom: 10px;">
+                          <img src="service-3.jpg" alt="" style="height: 100%;width: 100%;object-fit: cover;border-radius: 10px;">
+                        </div>
+                        <h4>Steel Works (TopRock Inhouse)</h4>
+                        <p>
+                          Fabrication and installation of steel structures
+                          ensuring strength and visual appeal.
+                        </p>
+                      </div>
+
+                      <div class="service">
+                        <div class="image" style="height: 150px;width: 100%;margin-bottom: 10px;">
+                          <img src="service-4.webp" alt="" style="height: 100%;width: 100%;object-fit: cover;border-radius: 10px;">
+                        </div>
+                        <h4>Marble &amp; Stone (TopRock Inhouse)</h4>
+                        <p>
+                          Premium marble and stone solutions for luxurious,
+                          long-lasting finishes.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Visual separator -->
+                  <div
+                    style="border-top: 1px dashed #e6edf1; margin: 8px 0 8px"
+                  ></div>
+
+                  <p style="margin: 0 0 6px; color: #556b75; font-size: 14px;text-align: center;">
+                    We'd love to explore how TopRock Interiors can partner with
+                    you for your next project. Reply to this email or click the
+                    button below to schedule a quick discussion.
+                  </p>
+
+                  <!-- CTA -->
+                  <div class="cta">
+                    <!-- Button uses a simple table-friendly approach -->
+                    <table
+                      role="presentation"
+                      cellpadding="0"
+                      cellspacing="0"
+                      style="margin: 0 auto"
+                    >
+                      <tr>
+                        <td
+                          align="center"
+                          valign="middle"
+                          style="border-radius: 8px"
+                        >
+                          <a
+                            href="mailto:contact@toprockinteriors.com?subject=Introduction%20-%20TopRock%20Interiors"
+                            class="btn"
+                            >Schedule a Discussion</a
+                          >
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <!-- Contact card -->
+                  <table
+                    role="presentation"
+                    width="100%"
+                    cellpadding="0"
+                    cellspacing="0"
+                    style="margin-top: 6px"
+                  >
+                    <tr>
+                      <td
+                        style="
+                          padding: 10px;
+                          background: #fbfdff;
+                          border-radius: 8px;
+                          border: 1px solid #eef4f7;
+                          text-align: center;
+                          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                        "
+                      >
+                        <strong style="display: block; color: #102a43"
+                          >TopRock Interiors llc</strong
+                        >
+                        <div style="color: #60717b; font-size: 13px">
+                          Email :
+                          <a href="mailto:contact@toprockinteriors.com"
+                            >
+info@toprockinteriors.com</a
+                          >
+                          &nbsp; | &nbsp; Phone : 
++971 42678095 | +971 42560268
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding: 0 18px 18px;text-align: center;">
+                  <small style="color: #93a1aa;text-align: center;"
+                    >If you do not wish to receive similar emails, reply with
+                    "Unsubscribe" in the subject line.</small
+                  >
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="footer">
+            TopRock Interiors • Design & Build Firm • 600+ Professionals • GCC
+          </td>
+        </tr>
+      </table>
+    </center>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
