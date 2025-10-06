@@ -7,187 +7,244 @@
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     />
-    <style>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  body {
+    background-image: url(marble-texture.jpg);
+  }
 
-      body{
-        background-image: url(marble-texture.jpg);
-      }
-      /* General reset */
-      body,
-      table,
-      td {
-       font-family: "Poppins", sans-serif;
-      }
-      img {
-        border: 0;
-        display: block;
-      }
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
+  body, table, td {
+    font-family: "Poppins", sans-serif;
+  }
 
-      /* Container */
-      .email-wrap {
-        width: 100%;
-        background: #f4f6f8;
-        padding: 24px 0;
-      }
-      .email-inner {
-        max-width: 680px;
-        margin: 0 auto;
-      }
+  img {
+    border: 0;
+    display: block;
+  }
 
-      /* Card */
-.card {
-  background-image: url("marble-texture.jpg");
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(18, 24, 40, 0.06);
-  position: relative;
-  z-index: 0;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-}
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #fff;
-  opacity: 0.5;
-  z-index: 1; /* sits above background image */
-}
+  /* Container */
+  .email-wrap {
+    width: 100%;
+    background: #f4f6f8;
+    padding: 24px 0;
+  }
 
-.card > * {
-  position: relative;
-  z-index: 2; /* ensures card content stays above overlay */
-}
-      /* Hero */
-      .hero {
-        background-image: url(team.jpg);
-        background-size: cover;
-        background-position: center;
-      }
-      .hero .overlay {
-        background: #0d2d54d3;
-        padding: 36px 28px;
-      }
-      .eyebrow {
-        font-size: 12px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: #d0d6da;
-      }
-      .h1 {
-        font-size: 26px;
-        line-height: 1.12;
-        color: #ffffff;
-        margin: 10px 0 6px;
-        font-weight: 700;
-      }
-      .sub {
-        color: #e6eef6;
-        font-size: 14px;
-      }
+  .email-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
 
-      /* Stats strip */
-      .stats {
-        display: flex;
-        gap: 12px;
-        padding: 18px;
-        justify-content: space-between;
-      }
-      .stat {
-        flex: 1;
-        text-align: center;
-      }
-      .stat .num {
-        font-weight: 700;
-        font-size: 25px;
-        color: #102a43;
-      }
-      .stat .lbl {
-        font-size: 14px;
-        color: #6b7885;
-      }
+  /* Card */
+  .card {
+    background-image: url("marble-texture.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+                rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    position: relative;
+    z-index: 0;
+  }
 
-      /* Services */
-      .services {
-        padding: 20px 0px;
-      }
-      .service-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-      }
-      .service {
-        border-radius: 8px;
-        padding: 12px;
-        background: linear-gradient(180deg, #ffffff, #fbfcfd);
-        border: 1px solid #eef2f6;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-      }
-      .service h4 {
-        margin: 4px 0 6px;
-        font-size: 15px;
-        font-weight: 600;
-      }
-      .service p {
-        font-size: 13px;
-        color: #586874;
-        margin: 0;
-      }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    opacity: 0.4;
+    z-index: 1;
+  }
 
-      /* CTA */
-      .cta {
-        padding: 22px;
-        text-align: center;
-      }
-      .btn {
-        display: inline-block;
-        padding: 10px 18px;
-        border-radius: 8px;
-        background: #14427B;
-        color: #fff;
-        font-weight: 600;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-      }
+  .card > * {
+    position: relative;
+    z-index: 2;
+  }
 
-      /* Footer */
-      .footer {
-        font-size: 12px;
-        color: #9aa6b2;
-        padding: 16px 20px;
-        text-align: center;
-      }
-      .service-grid h4{
-        text-align: center;
-      }
-            .service-grid p{
-        text-align: center;
-      }
+  /* Hero */
+  .hero {
+    background-image: url(team.jpg);
+    background-size: cover;
+    background-position: center;
+  }
 
-      /* Responsive */
-      @media screen and (max-width: 520px) {
-        .h1 {
-          font-size: 20px;
-        }
-        .service-grid {
-          grid-template-columns: 1fr;
-        }
-        .stats {
-          flex-direction: column;
-          gap: 8px;
-        }
-      }
-    </style>
+  .hero .overlay {
+    background: #0d2d54d3;
+    padding: 36px 28px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #d0d6da;
+  }
+
+  .h1 {
+    font-size: 26px;
+    line-height: 1.12;
+    color: #ffffff;
+    margin: 10px 0 6px;
+    font-weight: 700;
+  }
+
+  .sub {
+    color: #e6eef6;
+    font-size: 14px;
+  }
+
+  /* Stats */
+  .stats {
+    display: flex;
+    gap: 12px;
+    padding: 18px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    flex: 1;
+    text-align: center;
+  }
+
+  .stat .num {
+    font-weight: 700;
+    font-size: 25px;
+    color: #102a43;
+  }
+
+  .stat .lbl {
+    font-size: 14px;
+    color: #6b7885;
+  }
+
+  /* Services */
+  .services {
+    padding: 20px 0px;
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .service {
+    border-radius: 8px;
+    padding: 12px;
+    background: linear-gradient(180deg, #ffffff, #fbfcfd);
+    border: 1px solid #eef2f6;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  .service h4 {
+    margin: 4px 0 6px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .service p {
+    font-size: 13px;
+    color: #586874;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* CTA */
+  .cta {
+    padding: 22px;
+    text-align: center;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: #14427B;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  /* Footer */
+  .footer {
+    font-size: 12px;
+    color: #9aa6b2;
+    padding: 16px 20px;
+    text-align: center;
+  }
+
+  /* ✅ Responsive Fixes */
+  @media screen and (max-width: 520px) {
+    .our-title{
+      font-size: 16px !important;
+    }
+    /* Reduce overlay padding */
+    .hero .overlay {
+      padding: 20px 16px;
+    }
+
+    /* Stack hero content vertically */
+    .hero table tr {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center !important;
+      text-align: center !important;
+    }
+
+    .hero td {
+      width: 100% !important;
+      padding: 0 !important;
+      justify-content: center !important;
+    }
+
+    .hero img {
+      margin-top: 12px;
+      width: 120px !important;
+      margin-bottom: 30px;
+    }
+
+    /* Adjust white overlay opacity */
+    .card::before {
+      opacity: 0.2;
+    }
+
+    /* Stats: keep all in one row but smaller text */
+    .stats {
+      flex-wrap: nowrap;
+      gap: 6px;
+      padding: 10px 6px;
+    }
+
+    .stat .num {
+      font-size: 18px;
+    }
+
+    .stat .lbl {
+      font-size: 11px;
+    }
+
+    /* Services grid becomes single column */
+    .service-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .h1 {
+      font-size: 20px;
+    }
+  }
+</style>
+
   </head>
   <body style="margin: 0; padding: 0;">
     <center class="email-wrap">
@@ -248,7 +305,8 @@
                           <img
                             src="tri_white.png"
                             alt="TopRock Interiors Logo"
-                            style="width: 140px; max-width: 100%"
+                            style="width: 140px; max-width: 100%;display: flex;
+                            justify-content: end;"
                           />
                         </td>
                       </tr>
@@ -279,7 +337,7 @@
 
                   <!-- Services -->
                   <div class="services">
-                    <div
+                    <div class="our-title"
                       style="
                         font-weight: 600;
                         font-size: 18px;
